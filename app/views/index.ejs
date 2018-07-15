@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/gerarVersoes" method="post">
+        <input type="text" name="id" placeholder="ID questionário"><br>
+        <input type="text" name="quantidade" placeholder="Quantidade"><br>
+        <input type="submit" value="LET'S GO!">
+    </form>
+    <br><br><br>
+    <h3>Cadastro de Professor</h3>
+    <% if(errors) { %>
+    <% for(i = 0; i < errors.length; i++) { %>
+        <p for="%<=errors[i].param%>">
+            Campo <%=errors[i].param%> é 
+            <%=errors[i].msg%>
+        </p>
+    <% } }%>
+    <form action="/cadastroProfessor" method="post">
+        <input type="text" name="nome" id="nome" placeholder="Nome" value="<%=dados.nome%>"><br>
+        <input type="date" name="data_admissao" id="data_admissao" placeholder="Data de Admissao" value="<%=dados.data_admissao%>"><br>
+        <input type="text" name="salario_base" id="salario_base" placeholder="Salário Base" value="<%=dados.salario_base%>"><br><br>
+
+        <input type="text" name="cpf" id="cpf" placeholder="CPF" value="<%=dados.cpf%>"><br>
+        <input type="text" name="rg" id="rg" placeholder="RG" value="<%=dados.rg%>"><br>
+        <input type="date" name="data_nascimento" id="data_nascimento" placeholder="Data de Nascimento" value="<%=dados.data_nascimento%>"><br>
+        <input type="number" name="idade" id="idade" min="18" max="80" value="<%=dados.idade%>"><br>
+        <select name="sexo" id="sexo">
+            <option value="0">Masculino</option>
+            <option value="1">Feminino</option>
+        </select><br>
+        <input type="tel" name="telefone" id="telefone" placeholder="Telefone" value="<%=dados.telefone%>"><br>
+        <input type="password" name="senha" id="senha" placeholder="Senha" min="10" max="20"><br><br>
+        <input type="text" name="nome_rua" id="nome_rua" placeholder="Endereço">
+        <input type="text" name="numero_casa" id="numero_casa" placeholder="Número">
+        <input type="text" name="nome_bairro" id="nome_bairro" placeholder="Bairro">
+        <input type="text" name="complemento" id="complemento" placeholder="Complemento"><br>
+        <input type="text" name="CEP" id="CEP" placeholder="CEP">
+        <input type="text" name="nome_cidade" id="nome_cidade" placeholder="Cidade">
+        <select name="nome_UF" id="UF">
+            <option value="SP">SP</option>
+            <option value="AM">AM</option>
+            <option value="RJ">RJ</option>
+            <option value="RS">RS</option>
+            <option value="BA">BA</option>
+        </select><br>
+        <input type="submit" value="Cadastrar">
+    </form><br><br><br>
+</body>
+</html>
